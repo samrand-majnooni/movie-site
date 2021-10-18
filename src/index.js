@@ -1,13 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import Layout from "./component/Layout/Layout";
+import Pages from "./pages/Pages";
 
 ReactDOM.render(
-  <div>
- <App />
-  </div>,
-  
-  document.getElementById('root')
+  <BrowserRouter>
+    <Layout>
+      <Pages />
+    </Layout>
+  </BrowserRouter>,
+  document.getElementById("root")
 );
-
