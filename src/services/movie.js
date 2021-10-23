@@ -1,4 +1,4 @@
-import fench from "./fench";
+import fench from "./fench"
 function popular() {
   return fench("movie/popular");
 }

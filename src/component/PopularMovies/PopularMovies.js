@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import movie from "../../services/movie";
+import React  from "react";
+import useMovieDB from "../../hooks/useMovieDB";
+import MoviesSlider from "../../helpers/MoviesSlider/MoviesSlider";
 
-export default function PopularMovies() {
-  const [data, setData] = useState(null);
 
-  async function getPopularMovies() {
-    const result = await movie.popular();
-    setData(result);
-  }
-  useEffect(() => {
-    getPopularMovies();
-  }, []);
-  return <div></div>;
+export default function PopularMovies({movies}) {
+  const{data,loading} = useMovieDB("movie/popular",)
+
+  return (
+
+    <div>
+    <MoviesSlider movies={data?.results || []} />
+  </div>
+    )
 }
